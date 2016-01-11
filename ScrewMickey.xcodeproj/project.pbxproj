@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		532BCCC31C44588600A16B5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BCCC21C44588600A16B5C /* AppDelegate.swift */; };
+		532BCCC51C44588600A16B5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BCCC41C44588600A16B5C /* ViewController.swift */; };
+		532BCCC81C44588600A16B5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 532BCCC61C44588600A16B5C /* Main.storyboard */; };
+		532BCCCA1C44588600A16B5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 532BCCC91C44588600A16B5C /* Assets.xcassets */; };
+		532BCCCD1C44588600A16B5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 532BCCCB1C44588600A16B5C /* LaunchScreen.storyboard */; };
+		532BCCD81C44588600A16B5C /* ScrewMickeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BCCD71C44588600A16B5C /* ScrewMickeyTests.swift */; };
+		532BCCE31C44588600A16B5C /* ScrewMickeyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BCCE21C44588600A16B5C /* ScrewMickeyUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		532BCCD41C44588600A16B5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 532BCCB71C44588600A16B5C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 532BCCBE1C44588600A16B5C;
+			remoteInfo = ScrewMickey;
+		};
+		532BCCDF1C44588600A16B5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 532BCCB71C44588600A16B5C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 532BCCBE1C44588600A16B5C;
+			remoteInfo = ScrewMickey;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		532BCCBF1C44588600A16B5C /* ScrewMickey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrewMickey.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		532BCCC21C44588600A16B5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		532BCCC41C44588600A16B5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		532BCCC71C44588600A16B5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		532BCCC91C44588600A16B5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		532BCCCC1C44588600A16B5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		532BCCCE1C44588600A16B5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		532BCCD31C44588600A16B5C /* ScrewMickeyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrewMickeyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		532BCCD71C44588600A16B5C /* ScrewMickeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrewMickeyTests.swift; sourceTree = "<group>"; };
+		532BCCD91C44588600A16B5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		532BCCDE1C44588600A16B5C /* ScrewMickeyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrewMickeyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		532BCCE21C44588600A16B5C /* ScrewMickeyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrewMickeyUITests.swift; sourceTree = "<group>"; };
+		532BCCE41C44588600A16B5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		532BCCBC1C44588600A16B5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		532BCCD01C44588600A16B5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		532BCCDB1C44588600A16B5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		532BCCB61C44588600A16B5C = {
+			isa = PBXGroup;
+			children = (
+				532BCCC11C44588600A16B5C /* ScrewMickey */,
+				532BCCD61C44588600A16B5C /* ScrewMickeyTests */,
+				532BCCE11C44588600A16B5C /* ScrewMickeyUITests */,
+				532BCCC01C44588600A16B5C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		532BCCC01C44588600A16B5C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				532BCCBF1C44588600A16B5C /* ScrewMickey.app */,
+				532BCCD31C44588600A16B5C /* ScrewMickeyTests.xctest */,
+				532BCCDE1C44588600A16B5C /* ScrewMickeyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		532BCCC11C44588600A16B5C /* ScrewMickey */ = {
+			isa = PBXGroup;
+			children = (
+				532BCCC21C44588600A16B5C /* AppDelegate.swift */,
+				532BCCC41C44588600A16B5C /* ViewController.swift */,
+				532BCCC61C44588600A16B5C /* Main.storyboard */,
+				532BCCC91C44588600A16B5C /* Assets.xcassets */,
+				532BCCCB1C44588600A16B5C /* LaunchScreen.storyboard */,
+				532BCCCE1C44588600A16B5C /* Info.plist */,
+			);
+			path = ScrewMickey;
+			sourceTree = "<group>";
+		};
+		532BCCD61C44588600A16B5C /* ScrewMickeyTests */ = {
+			isa = PBXGroup;
+			children = (
+				532BCCD71C44588600A16B5C /* ScrewMickeyTests.swift */,
+				532BCCD91C44588600A16B5C /* Info.plist */,
+			);
+			path = ScrewMickeyTests;
+			sourceTree = "<group>";
+		};
+		532BCCE11C44588600A16B5C /* ScrewMickeyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				532BCCE21C44588600A16B5C /* ScrewMickeyUITests.swift */,
+				532BCCE41C44588600A16B5C /* Info.plist */,
+			);
+			path = ScrewMickeyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		532BCCBE1C44588600A16B5C /* ScrewMickey */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 532BCCE71C44588600A16B5C /* Build configuration list for PBXNativeTarget "ScrewMickey" */;
+			buildPhases = (
+				532BCCBB1C44588600A16B5C /* Sources */,
+				532BCCBC1C44588600A16B5C /* Frameworks */,
+				532BCCBD1C44588600A16B5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScrewMickey;
+			productName = ScrewMickey;
+			productReference = 532BCCBF1C44588600A16B5C /* ScrewMickey.app */;
+			productType = "com.apple.product-type.application";
+		};
+		532BCCD21C44588600A16B5C /* ScrewMickeyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 532BCCEA1C44588600A16B5C /* Build configuration list for PBXNativeTarget "ScrewMickeyTests" */;
+			buildPhases = (
+				532BCCCF1C44588600A16B5C /* Sources */,
+				532BCCD01C44588600A16B5C /* Frameworks */,
+				532BCCD11C44588600A16B5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				532BCCD51C44588600A16B5C /* PBXTargetDependency */,
+			);
+			name = ScrewMickeyTests;
+			productName = ScrewMickeyTests;
+			productReference = 532BCCD31C44588600A16B5C /* ScrewMickeyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		532BCCDD1C44588600A16B5C /* ScrewMickeyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 532BCCED1C44588600A16B5C /* Build configuration list for PBXNativeTarget "ScrewMickeyUITests" */;
+			buildPhases = (
+				532BCCDA1C44588600A16B5C /* Sources */,
+				532BCCDB1C44588600A16B5C /* Frameworks */,
+				532BCCDC1C44588600A16B5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				532BCCE01C44588600A16B5C /* PBXTargetDependency */,
+			);
+			name = ScrewMickeyUITests;
+			productName = ScrewMickeyUITests;
+			productReference = 532BCCDE1C44588600A16B5C /* ScrewMickeyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		532BCCB71C44588600A16B5C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Syluaq DP Team";
+				TargetAttributes = {
+					532BCCBE1C44588600A16B5C = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = QNRK6VP2V6;
+					};
+					532BCCD21C44588600A16B5C = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = QNRK6VP2V6;
+						TestTargetID = 532BCCBE1C44588600A16B5C;
+					};
+					532BCCDD1C44588600A16B5C = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = QNRK6VP2V6;
+						TestTargetID = 532BCCBE1C44588600A16B5C;
+					};
+				};
+			};
+			buildConfigurationList = 532BCCBA1C44588600A16B5C /* Build configuration list for PBXProject "ScrewMickey" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 532BCCB61C44588600A16B5C;
+			productRefGroup = 532BCCC01C44588600A16B5C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				532BCCBE1C44588600A16B5C /* ScrewMickey */,
+				532BCCD21C44588600A16B5C /* ScrewMickeyTests */,
+				532BCCDD1C44588600A16B5C /* ScrewMickeyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		532BCCBD1C44588600A16B5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				532BCCCD1C44588600A16B5C /* LaunchScreen.storyboard in Resources */,
+				532BCCCA1C44588600A16B5C /* Assets.xcassets in Resources */,
+				532BCCC81C44588600A16B5C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		532BCCD11C44588600A16B5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		532BCCDC1C44588600A16B5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		532BCCBB1C44588600A16B5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				532BCCC51C44588600A16B5C /* ViewController.swift in Sources */,
+				532BCCC31C44588600A16B5C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		532BCCCF1C44588600A16B5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				532BCCD81C44588600A16B5C /* ScrewMickeyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		532BCCDA1C44588600A16B5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				532BCCE31C44588600A16B5C /* ScrewMickeyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		532BCCD51C44588600A16B5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 532BCCBE1C44588600A16B5C /* ScrewMickey */;
+			targetProxy = 532BCCD41C44588600A16B5C /* PBXContainerItemProxy */;
+		};
+		532BCCE01C44588600A16B5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 532BCCBE1C44588600A16B5C /* ScrewMickey */;
+			targetProxy = 532BCCDF1C44588600A16B5C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		532BCCC61C44588600A16B5C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				532BCCC71C44588600A16B5C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		532BCCCB1C44588600A16B5C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				532BCCCC1C44588600A16B5C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		532BCCE51C44588600A16B5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		532BCCE61C44588600A16B5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		532BCCE81C44588600A16B5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ScrewMickey/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.syluaq.ScrewMickey;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		532BCCE91C44588600A16B5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ScrewMickey/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.syluaq.ScrewMickey;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		532BCCEB1C44588600A16B5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ScrewMickeyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.syluaq.ScrewMickeyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScrewMickey.app/ScrewMickey";
+			};
+			name = Debug;
+		};
+		532BCCEC1C44588600A16B5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ScrewMickeyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.syluaq.ScrewMickeyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScrewMickey.app/ScrewMickey";
+			};
+			name = Release;
+		};
+		532BCCEE1C44588600A16B5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ScrewMickeyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.syluaq.ScrewMickeyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ScrewMickey;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		532BCCEF1C44588600A16B5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ScrewMickeyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.syluaq.ScrewMickeyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ScrewMickey;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		532BCCBA1C44588600A16B5C /* Build configuration list for PBXProject "ScrewMickey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				532BCCE51C44588600A16B5C /* Debug */,
+				532BCCE61C44588600A16B5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		532BCCE71C44588600A16B5C /* Build configuration list for PBXNativeTarget "ScrewMickey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				532BCCE81C44588600A16B5C /* Debug */,
+				532BCCE91C44588600A16B5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		532BCCEA1C44588600A16B5C /* Build configuration list for PBXNativeTarget "ScrewMickeyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				532BCCEB1C44588600A16B5C /* Debug */,
+				532BCCEC1C44588600A16B5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		532BCCED1C44588600A16B5C /* Build configuration list for PBXNativeTarget "ScrewMickeyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				532BCCEE1C44588600A16B5C /* Debug */,
+				532BCCEF1C44588600A16B5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 532BCCB71C44588600A16B5C /* Project object */;
+}
