@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53232FA01C47B91B00E12FC4 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53232F9F1C47B91B00E12FC4 /* ScanViewController.swift */; };
+		53232FA41C47C98000E12FC4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53232FA31C47C98000E12FC4 /* HomeViewController.swift */; };
+		53232FA61C47DF6900E12FC4 /* RangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53232FA51C47DF6900E12FC4 /* RangeViewController.swift */; };
 		532BCCC31C44588600A16B5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BCCC21C44588600A16B5C /* AppDelegate.swift */; };
-		532BCCC51C44588600A16B5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BCCC41C44588600A16B5C /* ViewController.swift */; };
 		532BCCC81C44588600A16B5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 532BCCC61C44588600A16B5C /* Main.storyboard */; };
 		532BCCCA1C44588600A16B5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 532BCCC91C44588600A16B5C /* Assets.xcassets */; };
 		532BCCCD1C44588600A16B5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 532BCCCB1C44588600A16B5C /* LaunchScreen.storyboard */; };
 		532BCCD81C44588600A16B5C /* ScrewMickeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BCCD71C44588600A16B5C /* ScrewMickeyTests.swift */; };
 		532BCCE31C44588600A16B5C /* ScrewMickeyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BCCE21C44588600A16B5C /* ScrewMickeyUITests.swift */; };
+		532BCCF31C4458DA00A16B5C /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BCCF21C4458DA00A16B5C /* QRCode.swift */; };
+		532BCCF51C44596400A16B5C /* DataToCraft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BCCF41C44596400A16B5C /* DataToCraft.swift */; };
+		532BCCFB1C445FD600A16B5C /* CrafterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BCCFA1C445FD600A16B5C /* CrafterViewController.swift */; };
+		532BCCFD1C44675100A16B5C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BCCFC1C44675100A16B5C /* SettingsViewController.swift */; };
+		53886E651C4478E400C047A2 /* SQLi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886E641C4478E400C047A2 /* SQLi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		53232F9F1C47B91B00E12FC4 /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		53232FA31C47C98000E12FC4 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		53232FA51C47DF6900E12FC4 /* RangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeViewController.swift; sourceTree = "<group>"; };
 		532BCCBF1C44588600A16B5C /* ScrewMickey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrewMickey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		532BCCC21C44588600A16B5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		532BCCC41C44588600A16B5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		532BCCC71C44588600A16B5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		532BCCC91C44588600A16B5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		532BCCCC1C44588600A16B5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +56,11 @@
 		532BCCDE1C44588600A16B5C /* ScrewMickeyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrewMickeyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		532BCCE21C44588600A16B5C /* ScrewMickeyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrewMickeyUITests.swift; sourceTree = "<group>"; };
 		532BCCE41C44588600A16B5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		532BCCF21C4458DA00A16B5C /* QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
+		532BCCF41C44596400A16B5C /* DataToCraft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataToCraft.swift; sourceTree = "<group>"; };
+		532BCCFA1C445FD600A16B5C /* CrafterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrafterViewController.swift; sourceTree = "<group>"; };
+		532BCCFC1C44675100A16B5C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		53886E641C4478E400C047A2 /* SQLi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				532BCCC21C44588600A16B5C /* AppDelegate.swift */,
-				532BCCC41C44588600A16B5C /* ViewController.swift */,
+				532BCCF11C4458A200A16B5C /* Controller */,
+				532BCCF01C44589700A16B5C /* Model */,
 				532BCCC61C44588600A16B5C /* Main.storyboard */,
 				532BCCC91C44588600A16B5C /* Assets.xcassets */,
 				532BCCCB1C44588600A16B5C /* LaunchScreen.storyboard */,
@@ -123,6 +138,28 @@
 				532BCCE41C44588600A16B5C /* Info.plist */,
 			);
 			path = ScrewMickeyUITests;
+			sourceTree = "<group>";
+		};
+		532BCCF01C44589700A16B5C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				532BCCF41C44596400A16B5C /* DataToCraft.swift */,
+				532BCCF21C4458DA00A16B5C /* QRCode.swift */,
+				53886E641C4478E400C047A2 /* SQLi.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		532BCCF11C4458A200A16B5C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				53232FA31C47C98000E12FC4 /* HomeViewController.swift */,
+				53232F9F1C47B91B00E12FC4 /* ScanViewController.swift */,
+				53232FA51C47DF6900E12FC4 /* RangeViewController.swift */,
+				532BCCFA1C445FD600A16B5C /* CrafterViewController.swift */,
+				532BCCFC1C44675100A16B5C /* SettingsViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +296,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				532BCCC51C44588600A16B5C /* ViewController.swift in Sources */,
+				532BCCFD1C44675100A16B5C /* SettingsViewController.swift in Sources */,
+				53232FA01C47B91B00E12FC4 /* ScanViewController.swift in Sources */,
+				532BCCFB1C445FD600A16B5C /* CrafterViewController.swift in Sources */,
+				53232FA41C47C98000E12FC4 /* HomeViewController.swift in Sources */,
+				532BCCF51C44596400A16B5C /* DataToCraft.swift in Sources */,
 				532BCCC31C44588600A16B5C /* AppDelegate.swift in Sources */,
+				53886E651C4478E400C047A2 /* SQLi.swift in Sources */,
+				532BCCF31C4458DA00A16B5C /* QRCode.swift in Sources */,
+				53232FA61C47DF6900E12FC4 /* RangeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,8 +448,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ScrewMickey/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.syluaq.ScrewMickey;
+				PRODUCT_BUNDLE_IDENTIFIER = me.clm.ScrewMickey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -415,8 +460,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ScrewMickey/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.syluaq.ScrewMickey;
+				PRODUCT_BUNDLE_IDENTIFIER = me.clm.ScrewMickey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -487,6 +533,7 @@
 				532BCCE91C44588600A16B5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		532BCCEA1C44588600A16B5C /* Build configuration list for PBXNativeTarget "ScrewMickeyTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +542,7 @@
 				532BCCEC1C44588600A16B5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		532BCCED1C44588600A16B5C /* Build configuration list for PBXNativeTarget "ScrewMickeyUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +551,7 @@
 				532BCCEF1C44588600A16B5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
