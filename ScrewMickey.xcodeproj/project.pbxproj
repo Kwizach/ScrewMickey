@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		530D87941C4CE3BC00955E21 /* FromTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530D87931C4CE3BC00955E21 /* FromTextViewController.swift */; };
 		53232FA01C47B91B00E12FC4 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53232F9F1C47B91B00E12FC4 /* ScanViewController.swift */; };
 		53232FA41C47C98000E12FC4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53232FA31C47C98000E12FC4 /* HomeViewController.swift */; };
 		53232FA61C47DF6900E12FC4 /* RangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53232FA51C47DF6900E12FC4 /* RangeViewController.swift */; };
@@ -21,6 +22,8 @@
 		532BCCFB1C445FD600A16B5C /* CrafterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BCCFA1C445FD600A16B5C /* CrafterViewController.swift */; };
 		532BCCFD1C44675100A16B5C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BCCFC1C44675100A16B5C /* SettingsViewController.swift */; };
 		53886E651C4478E400C047A2 /* SQLi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886E641C4478E400C047A2 /* SQLi.swift */; };
+		53B5E3631C4A809A007EEBA0 /* SavedCodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5E3621C4A809A007EEBA0 /* SavedCodesViewController.swift */; };
+		53B5E3651C4BB42F007EEBA0 /* TypeYourTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5E3641C4BB42F007EEBA0 /* TypeYourTicketViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		530D87931C4CE3BC00955E21 /* FromTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FromTextViewController.swift; path = ../FromTextViewController.swift; sourceTree = "<group>"; };
 		53232F9F1C47B91B00E12FC4 /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		53232FA31C47C98000E12FC4 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		53232FA51C47DF6900E12FC4 /* RangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 		532BCCFA1C445FD600A16B5C /* CrafterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrafterViewController.swift; sourceTree = "<group>"; };
 		532BCCFC1C44675100A16B5C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		53886E641C4478E400C047A2 /* SQLi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLi.swift; sourceTree = "<group>"; };
+		53B5E3621C4A809A007EEBA0 /* SavedCodesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedCodesViewController.swift; sourceTree = "<group>"; };
+		53B5E3641C4BB42F007EEBA0 /* TypeYourTicketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeYourTicketViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,8 +162,11 @@
 				53232FA31C47C98000E12FC4 /* HomeViewController.swift */,
 				53232F9F1C47B91B00E12FC4 /* ScanViewController.swift */,
 				53232FA51C47DF6900E12FC4 /* RangeViewController.swift */,
+				53B5E3621C4A809A007EEBA0 /* SavedCodesViewController.swift */,
+				530D87931C4CE3BC00955E21 /* FromTextViewController.swift */,
 				532BCCFA1C445FD600A16B5C /* CrafterViewController.swift */,
 				532BCCFC1C44675100A16B5C /* SettingsViewController.swift */,
+				53B5E3641C4BB42F007EEBA0 /* TypeYourTicketViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -299,12 +308,15 @@
 				532BCCFD1C44675100A16B5C /* SettingsViewController.swift in Sources */,
 				53232FA01C47B91B00E12FC4 /* ScanViewController.swift in Sources */,
 				532BCCFB1C445FD600A16B5C /* CrafterViewController.swift in Sources */,
+				530D87941C4CE3BC00955E21 /* FromTextViewController.swift in Sources */,
 				53232FA41C47C98000E12FC4 /* HomeViewController.swift in Sources */,
 				532BCCF51C44596400A16B5C /* DataToCraft.swift in Sources */,
 				532BCCC31C44588600A16B5C /* AppDelegate.swift in Sources */,
 				53886E651C4478E400C047A2 /* SQLi.swift in Sources */,
+				53B5E3651C4BB42F007EEBA0 /* TypeYourTicketViewController.swift in Sources */,
 				532BCCF31C4458DA00A16B5C /* QRCode.swift in Sources */,
 				53232FA61C47DF6900E12FC4 /* RangeViewController.swift in Sources */,
+				53B5E3631C4A809A007EEBA0 /* SavedCodesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

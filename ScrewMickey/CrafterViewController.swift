@@ -145,20 +145,28 @@ class CrafterViewController: UIViewController {
         if changeReason == "ExplicitVolumeChange" {
             if previousVolume == volume {
                 if previousVolume == 0.0 {
-                    print("Down")
+                    removeTheCode()
                 }
                 else {
-                    print("Up")
+                    saveTheCode()
                 }
             }
             else if previousVolume < volume {
-                print("Up")
+                saveTheCode()
             }
             else {
-                print("Down")
+                removeTheCode()
             }
         }
         previousVolume = volume
+    }
+    
+    func saveTheCode() {
+        savedNumbers.append(data)
+    }
+    
+    func removeTheCode() {
+        doNotReuseNumbers.append(data)
     }
     
     func stopObservingVolumeChanges() {

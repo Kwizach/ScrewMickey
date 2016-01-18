@@ -13,11 +13,12 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     
     let session         : AVCaptureSession = AVCaptureSession()
     var previewLayer    : AVCaptureVideoPreviewLayer!
-    let highlightView   = UIView()
     var ean             : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scannedTicket = DataToCraft(string: "")
         
         startCapture()
     }
@@ -67,12 +68,6 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     // This is called when we find a known barcode type with the camera.
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
         
-        //var highlightViewRect = CGRectZero
-        
-        //var barCodeObject : AVMetadataObject!
-        
-        //var detectionString : String!
-        
         let barCodeTypes = [AVMetadataObjectTypeUPCECode,
             AVMetadataObjectTypeCode39Code,
             AVMetadataObjectTypeCode39Mod43Code,
@@ -92,10 +87,6 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             for barcodeType in barCodeTypes {
                 
                 if metadata.type == barcodeType {
-                    //barCodeObject = self.previewLayer.transformedMetadataObjectForMetadataObject(metadata as! AVMetadataMachineReadableCodeObject)
-                    
-                    //highlightViewRect = barCodeObject.bounds
-                    
                     self.ean = (metadata as! AVMetadataMachineReadableCodeObject).stringValue
                     if self.ean != nil {
                         break
@@ -108,14 +99,26 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         if self.ean != nil {
             // Stop session
             self.session.stopRunning()
-            scannedTicket.leText = self.ean!
-            scannedTicket.leType = .Entier
+            scannedTicket.setText(self.ean!)
             
-            // Vibrate
-            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
-            
-            // Go back to the previous view
-            navigationController?.popViewControllerAnimated(true)
+            if scannedTicket.isMickeyType() {
+                // Vibrate
+                AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+                // Go back to the previous view
+                navigationController?.popViewControllerAnimated(true)
+            }
+            else {
+                let actionIfCancelled : (UIAlertAction)->() = {
+                    [unowned self] action in
+                    // Purge the scannedTicket var
+                    scannedTicket = DataToCraft(string: "")
+                    // Relaunch the capture
+                    self.session.startRunning()
+                }
+                
+                // Tell the user it is not a valid Ticket
+                alertThatItIsNotAValidMickeyCode(self, actionCancel: actionIfCancelled, actionOK: nil)
+            }
         }
     }
     

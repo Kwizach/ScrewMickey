@@ -21,14 +21,18 @@ public struct ConfigCrafter {
     public var upperRangeValue : DataToCraft
     public var errorCorrection : QRCode.ErrorCorrection
     
+    public let incrementationValueDefault : Int = 1
+    public let itimeBetweenCraftDefault : Double = 2.0
+    public let errorCorrectionDefault : QRCode.ErrorCorrection = .Low
+    public let emptyDataToCraft : DataToCraft = DataToCraft(string: "", type: .AnyText)
     
     init() {
         isUpdatable = false
-        incrementationValue = 1
-        timeBetweenCraft = 0.0
-        lowerRangeValue = DataToCraft(string: "", type: .AnyText)
-        upperRangeValue = DataToCraft(string: "", type: .AnyText)
-        errorCorrection = QRCode.ErrorCorrection.Low
+        incrementationValue = incrementationValueDefault
+        timeBetweenCraft = itimeBetweenCraftDefault
+        lowerRangeValue = emptyDataToCraft
+        upperRangeValue = emptyDataToCraft
+        errorCorrection = errorCorrectionDefault
     }
 }
 

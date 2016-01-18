@@ -22,22 +22,43 @@ class HomeViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        if scannedTicket.leText != "" && scannedTicket.leType == .Entier {
+        if scannedTicket.leText == "" {
+            ourTicket.textLabel?.text = "Scan your ticket for more options"
+        }
+        else {
             ourTicket.textLabel?.text = scannedTicket.leText
+        }
+        
+        if scannedTicket.isMickeyType() {
             statusRangeCell(true)
+            // hide the separator if we hide the typeYourNumberCell
+            ourTicket.separatorInset = UIEdgeInsetsMake(0, 0, 0, ourTicket.frame.size.width)
         }
         else {
             statusRangeCell(false)
         }
         
-        if (savedNumbers != nil) {
-            statusSavedNumbersCell(true)
+        if savedNumbers.count == 0 {
+            statusSavedNumbersCell(false)
         }
         else {
-            statusSavedNumbersCell(false)
+            statusSavedNumbersCell(true)
         }
         
         optionTable.reloadData()
+    }
+    
+    // Tweak to hide the manuallyTypeCell if we did'nt scan it
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.section == 2 && indexPath.row == 1 && scannedTicket.isMickeyType() {
+            return 0.0
+        }
+        
+        return 44.0
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
     }
     
     override func didReceiveMemoryWarning() {

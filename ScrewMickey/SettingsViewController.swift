@@ -66,6 +66,10 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         if sender.text != nil {
             configQrafter.incrementationValue = Int(sender.text!)!
         }
+        else {
+            configQrafter.incrementationValue = configQrafter.incrementationValueDefault
+            sender.text = "\(configQrafter.incrementationValueDefault)"
+        }
     }
     
     // MARK: - Slider
