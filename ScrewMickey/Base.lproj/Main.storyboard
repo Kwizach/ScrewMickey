@@ -129,10 +129,10 @@
             </objects>
             <point key="canvasLocation" x="1606" y="-1320"/>
         </scene>
-        <!--View Controller-->
+        <!--From Text View Controller-->
         <scene sceneID="C6q-vu-XBU">
             <objects>
-                <viewController id="x54-cC-T3n" sceneMemberID="viewController">
+                <viewController id="x54-cC-T3n" customClass="FromTextViewController" customModule="ScrewMickey" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fpx-UL-dq3"/>
                         <viewControllerLayoutGuide type="bottom" id="FEm-hr-2fS"/>
@@ -151,6 +151,9 @@
                                 <rect key="frame" x="257" y="295" width="87" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Craft Text"/>
+                                <connections>
+                                    <segue destination="nFz-5M-bCp" kind="show" identifier="fromTextToCraft" id="rRQ-i7-6Lr"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zPQ-ZI-xvg">
                                 <rect key="frame" x="20" y="123" width="560" height="143"/>
@@ -173,6 +176,9 @@
                             <constraint firstItem="m7a-Mj-DOM" firstAttribute="centerX" secondItem="3d3-Ax-ZnY" secondAttribute="centerX" id="zG8-Xs-0uj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textToCraft" destination="zPQ-ZI-xvg" id="uda-ka-3XY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2kc-N6-8DW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -322,7 +328,7 @@
                                     <constraint firstAttribute="height" constant="200" id="xk2-bC-1LY"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMJ-b2-U29">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMJ-b2-U29">
                                 <rect key="frame" x="20" y="408" width="560" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -366,6 +372,8 @@
                     <connections>
                         <outlet property="leLabel" destination="eMJ-b2-U29" id="uFF-VS-HiR"/>
                         <outlet property="leQRCode" destination="Tkd-0V-Rxe" id="iV6-qK-B7r"/>
+                        <outlet property="pauseButton" destination="iWU-Iw-rN6" id="6Rm-S5-rR6"/>
+                        <outlet property="playButton" destination="8yf-b7-Aw1" id="NAq-DM-chB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q26-1V-S2Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -688,6 +696,6 @@
         <image name="text" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tJq-O2-g6a"/>
+        <segue reference="rRQ-i7-6Lr"/>
     </inferredMetricsTieBreakers>
 </document>

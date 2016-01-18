@@ -37,7 +37,7 @@ public struct DataToCraft {
         leType = type
     }
     
-    // MARK: - Functions
+    // MARK: - Operations
     
     public mutating func setText(str : String) {
         leText = str
@@ -92,6 +92,34 @@ public struct DataToCraft {
             return 0
         }
         return num
+    }
+    
+    public func isGreaterThan(second: String) -> Bool {
+        let premier = self.leText
+        
+        if premier.characters.count > second.characters.count {
+            return true
+        }
+        
+        if premier.characters.count > 18 && second.characters.count > 18 {
+            let (_, laFinPremier) = splitEntier(premier)
+            let (_, laFinSecond) = splitEntier(second)
+            
+            if UInt64(laFinPremier) > UInt64(laFinSecond) {
+                return true
+            }
+            else {
+                return false
+            }
+        }
+        else {
+            if UInt64(premier) > UInt64(second) {
+                return true
+            }
+            else {
+                return false
+            }
+        }
     }
     
     // MARK: - isMickey

@@ -15,6 +15,10 @@ class CrafterViewController: UIViewController {
     @IBOutlet weak var leQRCode: UIImageView!
     @IBOutlet weak var leLabel: UILabel!
     
+    @IBOutlet weak var playButton: UIBarButtonItem!
+    @IBOutlet weak var pauseButton: UIBarButtonItem!
+    
+    
     var qrCode = QRCode()
     var data : DataToCraft = DataToCraft(string: "", type: .AnyText)
     
@@ -33,6 +37,12 @@ class CrafterViewController: UIViewController {
         // show the QRCode
         showImage()
         
+        // Gray buttons if not in 
+        if !configQrafter.isUpdatable {
+            playButton.enabled = false
+            pauseButton.enabled = false
+        }
+        
         // Create active AudioSession and Observe Volume Changes
         do {
             // create an active session
@@ -46,9 +56,7 @@ class CrafterViewController: UIViewController {
             let volumeView: MPVolumeView = MPVolumeView(frame: CGRectZero)
             view.addSubview(volumeView)
         }
-        catch {
-            
-        }
+        catch {}
     }
     
     override func didReceiveMemoryWarning() {
@@ -85,7 +93,13 @@ class CrafterViewController: UIViewController {
     
     func updateCode() {
         data.incrementText( configQrafter.incrementationValue )
-        showImage()
+        if !data.isGreaterThan(configQrafter.upperRangeValue.leText) {
+            showImage()
+        }
+        else {
+            stopTimer()
+        }
+        
     }
     
     /////////////////////////////////////////////////////////////////////////////

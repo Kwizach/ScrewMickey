@@ -164,9 +164,9 @@
 				53232FA51C47DF6900E12FC4 /* RangeViewController.swift */,
 				53B5E3621C4A809A007EEBA0 /* SavedCodesViewController.swift */,
 				530D87931C4CE3BC00955E21 /* FromTextViewController.swift */,
+				53B5E3641C4BB42F007EEBA0 /* TypeYourTicketViewController.swift */,
 				532BCCFA1C445FD600A16B5C /* CrafterViewController.swift */,
 				532BCCFC1C44675100A16B5C /* SettingsViewController.swift */,
-				53B5E3641C4BB42F007EEBA0 /* TypeYourTicketViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
