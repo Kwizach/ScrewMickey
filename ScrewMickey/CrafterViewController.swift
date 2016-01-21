@@ -201,7 +201,9 @@ class CrafterViewController: UIViewController {
     }
     
     func saveTheCode() {
-        savedNumbers.append(data)
+        if !checkIfDataAlreadyInSavedNumbers(data) {
+            savedNumbers.append(data)
+        }
     }
     
     func removeTheCode() {

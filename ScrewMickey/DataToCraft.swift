@@ -11,8 +11,16 @@ import Foundation
 public var scannedTicket : DataToCraft = DataToCraft(string: "")
 
 public var savedNumbers : [DataToCraft] = []
-public var doNotReuseNumbers : [DataToCraft] = []
-public var selectionToReplay : [DataToCraft] = []
+
+func checkIfDataAlreadyInSavedNumbers(data: DataToCraft) -> Bool {
+    for aData in savedNumbers {
+        if aData.leText == data.leText {
+            return true
+        }
+    }
+    return false
+}
+
 
 public struct DataToCraft {
     
