@@ -14,12 +14,23 @@ import UIKit
 public var configQrafter : ConfigCrafter = ConfigCrafter()
 
 public struct ConfigCrafter {
+    
+    public enum CraftFrom {
+        case Range
+        case RangeRandomly
+        case List
+    }
+    
     public var isUpdatable : Bool
     public var incrementationValue : Int
     public var timeBetweenCraft : Double
     public var lowerRangeValue : DataToCraft
     public var upperRangeValue : DataToCraft
+    public var rangeLength : Int
+    public var listOfValues : [DataToCraft]
     public var errorCorrection : QRCode.ErrorCorrection
+    public var craftFromRangeOrList : CraftFrom
+    public var withVibration : Bool
     
     public let incrementationValueDefault : Int = 1
     public let itimeBetweenCraftDefault : Double = 2.0
@@ -32,7 +43,11 @@ public struct ConfigCrafter {
         timeBetweenCraft = itimeBetweenCraftDefault
         lowerRangeValue = emptyDataToCraft
         upperRangeValue = emptyDataToCraft
+        listOfValues = []
+        craftFromRangeOrList = .Range
         errorCorrection = errorCorrectionDefault
+        withVibration = false
+        rangeLength = 0
     }
 }
 

@@ -68,12 +68,18 @@ class RangeViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
 
         // On ne passe rien au controller crafterviewcontroller... on utilise les variables globales
-
+        
+        configQrafter.isUpdatable = true
+        
         if segue.identifier == "rangeToCraft" {
-            configQrafter.isUpdatable = true
-            configQrafter.lowerRangeValue = DataToCraft(string: lowerVal, type: .Entier)
-            configQrafter.upperRangeValue = DataToCraft(string: upperVal, type: .Entier)
+            configQrafter.craftFromRangeOrList = .Range
         }
+        else if segue.identifier == "rangeToCraftRandomly" {
+            configQrafter.craftFromRangeOrList = .RangeRandomly
+            configQrafter.rangeLength = Int(upperRangeSlider.value - lowerRangeSlider.value)
+        }
+        configQrafter.lowerRangeValue = DataToCraft(string: lowerVal, type: .Entier)
+        configQrafter.upperRangeValue = DataToCraft(string: upperVal, type: .Entier)
     }
 
 }

@@ -49,6 +49,12 @@ public struct DataToCraft {
         }
     }
     
+    public mutating func getRandomlyInRange(lowerValue: String, range : Int) {
+        let randomNum = Int(arc4random_uniform(UInt32(range)) + 1)
+        self.leText = lowerValue
+        self.incrementText(randomNum)
+    }
+    
     public mutating func incrementText(step : Int) {
         if leType == .Entier || leType == .UserAccepted {
             var laValeur : Int
@@ -188,3 +194,4 @@ public func alertThatItIsNotAValidMickeyCode(me: UIViewController, actionCancel:
         me.navigationController?.popViewControllerAnimated(true)
     }
 }
+

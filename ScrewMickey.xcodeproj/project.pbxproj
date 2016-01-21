@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		530D87941C4CE3BC00955E21 /* FromTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530D87931C4CE3BC00955E21 /* FromTextViewController.swift */; };
 		53232FA01C47B91B00E12FC4 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53232F9F1C47B91B00E12FC4 /* ScanViewController.swift */; };
 		53232FA41C47C98000E12FC4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53232FA31C47C98000E12FC4 /* HomeViewController.swift */; };
 		53232FA61C47DF6900E12FC4 /* RangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53232FA51C47DF6900E12FC4 /* RangeViewController.swift */; };
 		532BCCC31C44588600A16B5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BCCC21C44588600A16B5C /* AppDelegate.swift */; };
-		532BCCC81C44588600A16B5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 532BCCC61C44588600A16B5C /* Main.storyboard */; };
 		532BCCCA1C44588600A16B5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 532BCCC91C44588600A16B5C /* Assets.xcassets */; };
 		532BCCCD1C44588600A16B5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 532BCCCB1C44588600A16B5C /* LaunchScreen.storyboard */; };
 		532BCCD81C44588600A16B5C /* ScrewMickeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BCCD71C44588600A16B5C /* ScrewMickeyTests.swift */; };
@@ -21,9 +19,12 @@
 		532BCCF51C44596400A16B5C /* DataToCraft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BCCF41C44596400A16B5C /* DataToCraft.swift */; };
 		532BCCFB1C445FD600A16B5C /* CrafterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BCCFA1C445FD600A16B5C /* CrafterViewController.swift */; };
 		532BCCFD1C44675100A16B5C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BCCFC1C44675100A16B5C /* SettingsViewController.swift */; };
+		535F97901C4E8CE000521F3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 535F978E1C4E8CE000521F3E /* Main.storyboard */; };
+		536F7BBB1C4E73B00097DA47 /* SQLiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536F7BBA1C4E73B00097DA47 /* SQLiTableViewController.swift */; };
 		53886E651C4478E400C047A2 /* SQLi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886E641C4478E400C047A2 /* SQLi.swift */; };
 		53B5E3631C4A809A007EEBA0 /* SavedCodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5E3621C4A809A007EEBA0 /* SavedCodesViewController.swift */; };
 		53B5E3651C4BB42F007EEBA0 /* TypeYourTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5E3641C4BB42F007EEBA0 /* TypeYourTicketViewController.swift */; };
+		53BC45C21C4F79700012FA02 /* FromTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BC45C11C4F79700012FA02 /* FromTextViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,13 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		530D87931C4CE3BC00955E21 /* FromTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FromTextViewController.swift; path = ../FromTextViewController.swift; sourceTree = "<group>"; };
 		53232F9F1C47B91B00E12FC4 /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		53232FA31C47C98000E12FC4 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		53232FA51C47DF6900E12FC4 /* RangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeViewController.swift; sourceTree = "<group>"; };
 		532BCCBF1C44588600A16B5C /* ScrewMickey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrewMickey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		532BCCC21C44588600A16B5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		532BCCC71C44588600A16B5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		532BCCC91C44588600A16B5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		532BCCCC1C44588600A16B5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		532BCCCE1C44588600A16B5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,9 +63,12 @@
 		532BCCF41C44596400A16B5C /* DataToCraft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataToCraft.swift; sourceTree = "<group>"; };
 		532BCCFA1C445FD600A16B5C /* CrafterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrafterViewController.swift; sourceTree = "<group>"; };
 		532BCCFC1C44675100A16B5C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		535F978F1C4E8CE000521F3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		536F7BBA1C4E73B00097DA47 /* SQLiTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiTableViewController.swift; sourceTree = "<group>"; };
 		53886E641C4478E400C047A2 /* SQLi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLi.swift; sourceTree = "<group>"; };
 		53B5E3621C4A809A007EEBA0 /* SavedCodesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedCodesViewController.swift; sourceTree = "<group>"; };
 		53B5E3641C4BB42F007EEBA0 /* TypeYourTicketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeYourTicketViewController.swift; sourceTree = "<group>"; };
+		53BC45C11C4F79700012FA02 /* FromTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FromTextViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +122,8 @@
 				532BCCC21C44588600A16B5C /* AppDelegate.swift */,
 				532BCCF11C4458A200A16B5C /* Controller */,
 				532BCCF01C44589700A16B5C /* Model */,
-				532BCCC61C44588600A16B5C /* Main.storyboard */,
 				532BCCC91C44588600A16B5C /* Assets.xcassets */,
+				535F978E1C4E8CE000521F3E /* Main.storyboard */,
 				532BCCCB1C44588600A16B5C /* LaunchScreen.storyboard */,
 				532BCCCE1C44588600A16B5C /* Info.plist */,
 			);
@@ -163,7 +165,8 @@
 				53232F9F1C47B91B00E12FC4 /* ScanViewController.swift */,
 				53232FA51C47DF6900E12FC4 /* RangeViewController.swift */,
 				53B5E3621C4A809A007EEBA0 /* SavedCodesViewController.swift */,
-				530D87931C4CE3BC00955E21 /* FromTextViewController.swift */,
+				53BC45C11C4F79700012FA02 /* FromTextViewController.swift */,
+				536F7BBA1C4E73B00097DA47 /* SQLiTableViewController.swift */,
 				53B5E3641C4BB42F007EEBA0 /* TypeYourTicketViewController.swift */,
 				532BCCFA1C445FD600A16B5C /* CrafterViewController.swift */,
 				532BCCFC1C44675100A16B5C /* SettingsViewController.swift */,
@@ -278,9 +281,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				535F97901C4E8CE000521F3E /* Main.storyboard in Resources */,
 				532BCCCD1C44588600A16B5C /* LaunchScreen.storyboard in Resources */,
 				532BCCCA1C44588600A16B5C /* Assets.xcassets in Resources */,
-				532BCCC81C44588600A16B5C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,13 +311,14 @@
 				532BCCFD1C44675100A16B5C /* SettingsViewController.swift in Sources */,
 				53232FA01C47B91B00E12FC4 /* ScanViewController.swift in Sources */,
 				532BCCFB1C445FD600A16B5C /* CrafterViewController.swift in Sources */,
-				530D87941C4CE3BC00955E21 /* FromTextViewController.swift in Sources */,
 				53232FA41C47C98000E12FC4 /* HomeViewController.swift in Sources */,
+				536F7BBB1C4E73B00097DA47 /* SQLiTableViewController.swift in Sources */,
 				532BCCF51C44596400A16B5C /* DataToCraft.swift in Sources */,
 				532BCCC31C44588600A16B5C /* AppDelegate.swift in Sources */,
 				53886E651C4478E400C047A2 /* SQLi.swift in Sources */,
 				53B5E3651C4BB42F007EEBA0 /* TypeYourTicketViewController.swift in Sources */,
 				532BCCF31C4458DA00A16B5C /* QRCode.swift in Sources */,
+				53BC45C21C4F79700012FA02 /* FromTextViewController.swift in Sources */,
 				53232FA61C47DF6900E12FC4 /* RangeViewController.swift in Sources */,
 				53B5E3631C4A809A007EEBA0 /* SavedCodesViewController.swift in Sources */,
 			);
@@ -352,20 +356,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		532BCCC61C44588600A16B5C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				532BCCC71C44588600A16B5C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		532BCCCB1C44588600A16B5C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				532BCCCC1C44588600A16B5C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		535F978E1C4E8CE000521F3E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				535F978F1C4E8CE000521F3E /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -458,6 +462,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ScrewMickey/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.clm.ScrewMickey;
@@ -470,6 +475,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ScrewMickey/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.clm.ScrewMickey;

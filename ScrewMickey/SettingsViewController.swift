@@ -14,6 +14,7 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var stepsTextField: UITextField!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var errorCorrectionPicker: UIPickerView!
+    @IBOutlet weak var vibrateSwitch: UISwitch!
     
     var errorCorrectionList = QRCode.ErrorCorrection.allFullValues
     var errorCorrectionShortList = QRCode.ErrorCorrection.allValues
@@ -42,7 +43,8 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         if let row = errorCorrectionShortList.indexOf(configQrafter.errorCorrection.rawValue) {
             errorCorrectionPicker.selectRow(row, inComponent: 0, animated: true)
         }
-        
+        // Switch
+        vibrateSwitch.on = configQrafter.withVibration
     }
 
     override func didReceiveMemoryWarning() {
@@ -103,45 +105,8 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         configQrafter.errorCorrection = QRCode.ErrorCorrection(rawValue: QRCode.ErrorCorrection.allValues[row])!
     }
     
-    
-    
-    // MARK: - TextFields delgation
-    /*
-    func textFieldDidEndEditing(textField: UITextField) {
-        self.activeField = nil
+    @IBAction func withVibrationChanged(sender: UISwitch) {
+        configQrafter.withVibration = sender.on
     }
     
-    func textFieldDidBeginEditing(textField: UITextField) {
-        self.activeField = textField
-    }
-    
-    func keyboardDidShow(notification: NSNotification) {
-        if let activeField = self.activeField, keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-            let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
-            self.scrollView.contentInset = contentInsets
-            self.scrollView.scrollIndicatorInsets = contentInsets
-            var aRect = self.view.frame
-            aRect.size.height -= keyboardSize.size.height
-            if (!CGRectContainsPoint(aRect, activeField.frame.origin)) {
-                self.scrollView.scrollRectToVisible(activeField.frame, animated: true)
-            }
-        }
-    }
-    
-    func keyboardWillBeHidden(notification: NSNotification) {
-        let contentInsets = UIEdgeInsetsZero
-        self.scrollView.contentInset = contentInsets
-        self.scrollView.scrollIndicatorInsets = contentInsets
-    }
-    */
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }

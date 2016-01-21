@@ -21,21 +21,28 @@ class CrafterViewController: UIViewController {
     
     var qrCode = QRCode()
     var data : DataToCraft = DataToCraft(string: "", type: .AnyText)
+    var indexInListToCraft = 0
     
     var odioSession : AVAudioSession = AVAudioSession.sharedInstance()
     var previousVolume : Float?
     
     var timer: NSTimer!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        data = configQrafter.lowerRangeValue
+        if configQrafter.craftFromRangeOrList == .Range || configQrafter.craftFromRangeOrList == .RangeRandomly {
+            data = configQrafter.lowerRangeValue
+        }
+        else {
+            data = configQrafter.listOfValues[indexInListToCraft]
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
         // show the QRCode
-        showImage()
+        showImage(false)
         
         // Gray buttons if not in 
         if !configQrafter.isUpdatable {
@@ -84,22 +91,43 @@ class CrafterViewController: UIViewController {
     
     /////////////////////////////////////////////////////////////////////////////
     
-    func showImage() {
+    func showImage(withVibration: Bool) {
         qrCode.errorCorrection = configQrafter.errorCorrection
         qrCode.setText(data.leText)
         leQRCode.image = qrCode.image
         leLabel.text = data.leText
+        
+        if withVibration {
+            // Vibrate
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+        }
     }
     
     func updateCode() {
-        data.incrementText( configQrafter.incrementationValue )
-        if !data.isGreaterThan(configQrafter.upperRangeValue.leText) {
-            showImage()
+        if configQrafter.craftFromRangeOrList == .Range {
+            data.incrementText( configQrafter.incrementationValue )
+            
+            if(data.isGreaterThan(configQrafter.upperRangeValue.leText)) {
+                stopTimer()
+            }
+            else {
+                showImage(configQrafter.withVibration)
+            }
         }
-        else {
-            stopTimer()
+        else if configQrafter.craftFromRangeOrList == .RangeRandomly {
+            data.getRandomlyInRange(configQrafter.lowerRangeValue.leText, range: configQrafter.rangeLength)
+            showImage(configQrafter.withVibration)
         }
-        
+        else if configQrafter.craftFromRangeOrList == .List {
+            indexInListToCraft++
+            if(indexInListToCraft < configQrafter.listOfValues.count) {
+                data = configQrafter.listOfValues[indexInListToCraft]
+                showImage(configQrafter.withVibration)
+            }
+            else {
+                stopTimer()
+            }
+        }
     }
     
     /////////////////////////////////////////////////////////////////////////////
@@ -124,6 +152,9 @@ class CrafterViewController: UIViewController {
             if (timer) != nil {
                 timer.invalidate()
                 timer = nil
+                
+                playButton.enabled = false
+                pauseButton.enabled = false
             }
         }
     }
@@ -142,13 +173,7 @@ class CrafterViewController: UIViewController {
     
     /////////////////////////////////////////////////////////////////////////////
     
-    /*private struct Observation {
-        static let VolumeKey = "outputVolume"
-        static let Context = UnsafeMutablePointer<Void>()
-    }*/
-    
     func startObservingVolumeChanges() {
-        //odioSession.addObserver(self, forKeyPath: Observation.VolumeKey, options: [.Initial, .New], context: Observation.Context)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "volumeChangement:", name: "AVSystemController_SystemVolumeDidChangeNotification", object: nil)
     }
     
@@ -180,49 +205,15 @@ class CrafterViewController: UIViewController {
     }
     
     func removeTheCode() {
-        doNotReuseNumbers.append(data)
+        if configQrafter.isUpdatable && timer == nil {
+            updateCode()
+        }
     }
     
     func stopObservingVolumeChanges() {
-        //odioSession.removeObserver(self, forKeyPath: Observation.VolumeKey, context: Observation.Context)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "AVSystemController_SystemVolumeDidChangeNotification", object: nil)
     }
     
-    /*
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        if context == Observation.Context {
-            if keyPath == Observation.VolumeKey, let volume = (change?[NSKeyValueChangeNewKey] as? NSNumber)?.floatValue {
-                // `volume` contains the new system output volume...
-                volumeChanged(volume)
-            }
-        } else {
-            super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
-        }
-    }
-    
-    func volumeChanged(volume: Float) {
-        
-        print("\(previousVolume) --> \(volume)")
-        
-        if (previousVolume != nil) {
-            if previousVolume == volume {
-                if previousVolume == 0.0 {
-                    print("Down")
-                }
-                else {
-                    print("Up")
-                }
-            }
-            else if previousVolume < volume {
-                print("Up")
-            }
-            else {
-                print("Down")
-            }
-        }
-        previousVolume = volume
-    }
-    */
     /*
     // MARK: - Navigation
     

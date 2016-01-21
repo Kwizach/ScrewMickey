@@ -58,10 +58,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             // Start the scanner. You'll have to end it yourself later.
             self.session.startRunning()
         }
-        catch let error as NSError {
-            // Handle any errors
-            print(error)
-        }
+        catch {}
     }
     
     

