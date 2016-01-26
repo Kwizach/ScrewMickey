@@ -9,7 +9,12 @@
 import UIKit
 
 class SQLiTableViewController: UITableViewController {
+    
+    var menu : AZDropdownMenu? = nil
+    var codeToAdd : String = ""
 
+    @IBOutlet var listOfSQLiTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,7 +46,12 @@ class SQLiTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("sqliIdentifier", forIndexPath: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = theSQLList.listOfSQLi[indexPath.row].value
+        /// Title
+        var title = codeToAdd
+        title += theSQLList.listOfSQLi[indexPath.row].value
+        cell.textLabel?.text = title
+        
+        /// Subtitle
         var subTitle : String = ""
         switch theSQLList.listOfSQLi[indexPath.row].typeDB {
         case .Any:
@@ -56,40 +66,50 @@ class SQLiTableViewController: UITableViewController {
         return cell
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    @IBAction func showMenu(sender: UIBarButtonItem) {
+        if menu == nil {
+            let titles = ["Our Ticket #", "Random in Range", "Random in Saved"]
+            menu = AZDropdownMenu(titles: titles )
+            menu!.overlayColor = UIColor.lightGrayColor()
+            menu!.overlayAlpha = 0.5
+            menu!.itemColor = UIColor.blackColor()
+            menu!.itemFontColor = UIColor.whiteColor()
+            menu!.itemAlpha = 0.8
+            menu!.itemWidth = 150
+            menu!.itemOriginX = .Right
+            
+            menu!.cellTapHandler = { [weak self] (indexPath: NSIndexPath) -> Void in
+                var data : DataToCraft = DataToCraft(string: "")
+                
+                switch indexPath.row {
+                case 0:
+                    data = DataToCraft(string: scannedTicket.leText)
+                case 1:
+                    if configQrafter.lowerRangeValue.leText != "" && configQrafter.rangeLength > 0 {
+                        data = DataToCraft(string: configQrafter.lowerRangeValue.leText, type: .Entier)
+                        data.getRandomlyInRange(configQrafter.lowerRangeValue.leText, range: configQrafter.rangeLength)
+                    }
+                case 2:
+                    if savedNumbers.count > 0 {
+                        data = savedNumbers[Int(arc4random_uniform(UInt32(savedNumbers.count)))]
+                    }
+                default:
+                    break
+                }
+                
+                self!.menu!.hideMenu()
+                self!.codeToAdd = data.leText
+                self!.listOfSQLiTableView.reloadData()
+                
+            }
+            
+            menu!.showMenuFromView(self.view)
+        }
+        else {
+            menu!.showMenuFromView(self.view)
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
+    
 
     // MARK: - Navigation
 
@@ -102,7 +122,8 @@ class SQLiTableViewController: UITableViewController {
             configQrafter.isUpdatable = false
             configQrafter.craftFromRangeOrList = .Range
             let row = self.tableView.indexPathForSelectedRow?.row
-            let data = DataToCraft(string: theSQLList.listOfSQLi[row!].value)
+            let stringToCraft = codeToAdd + theSQLList.listOfSQLi[row!].value
+            let data = DataToCraft(string: stringToCraft)
             configQrafter.lowerRangeValue = data
         }
     }

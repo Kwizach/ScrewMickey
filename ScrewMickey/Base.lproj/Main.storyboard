@@ -236,7 +236,16 @@
                             <outlet property="delegate" destination="NFI-Ee-tb0" id="yOb-jo-eCz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="SQLi List" id="669-FA-Ahb"/>
+                    <navigationItem key="navigationItem" title="SQLi List" id="669-FA-Ahb">
+                        <barButtonItem key="rightBarButtonItem" title="Add code before" id="dtV-a3-IDy">
+                            <connections>
+                                <action selector="showMenu:" destination="NFI-Ee-tb0" id="zPD-A7-qnh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="listOfSQLiTableView" destination="uY3-1T-EoW" id="kRW-Ve-YuO"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w3h-F8-oJ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -777,6 +786,6 @@
         <image name="text" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rRQ-i7-6Lr"/>
+        <segue reference="cZG-Fe-g5i"/>
     </inferredMetricsTieBreakers>
 </document>

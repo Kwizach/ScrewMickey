@@ -44,6 +44,8 @@ class RangeViewController: UIViewController {
         let nouvelleValeur = upperVal + " (+\(Int(sender.value)))"
         
         upperRangeLabel.text = nouvelleValeur
+        
+        configQrafter.rangeLength = Int(upperRangeSlider.value - lowerRangeSlider.value)
     }
     
     @IBAction func lowerSliderChanged(sender: UISlider) {
@@ -51,6 +53,9 @@ class RangeViewController: UIViewController {
         let nouvelleValeur = lowerVal + " (\(Int(sender.value)))"
         
         lowerRangeLabel.text = nouvelleValeur
+        
+        configQrafter.rangeLength = Int(upperRangeSlider.value - lowerRangeSlider.value)
+        configQrafter.lowerRangeValue = DataToCraft(string: lowerVal, type: .Entier)
     }
     
     func incrementOurTicket(valeur: Float) -> DataToCraft {
@@ -76,7 +81,6 @@ class RangeViewController: UIViewController {
         }
         else if segue.identifier == "rangeToCraftRandomly" {
             configQrafter.craftFromRangeOrList = .RangeRandomly
-            configQrafter.rangeLength = Int(upperRangeSlider.value - lowerRangeSlider.value)
         }
         configQrafter.lowerRangeValue = DataToCraft(string: lowerVal, type: .Entier)
         configQrafter.upperRangeValue = DataToCraft(string: upperVal, type: .Entier)

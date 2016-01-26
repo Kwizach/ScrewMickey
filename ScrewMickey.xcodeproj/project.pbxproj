@@ -25,6 +25,9 @@
 		53B5E3631C4A809A007EEBA0 /* SavedCodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5E3621C4A809A007EEBA0 /* SavedCodesViewController.swift */; };
 		53B5E3651C4BB42F007EEBA0 /* TypeYourTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5E3641C4BB42F007EEBA0 /* TypeYourTicketViewController.swift */; };
 		53BC45C21C4F79700012FA02 /* FromTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BC45C11C4F79700012FA02 /* FromTextViewController.swift */; };
+		53E0B4B31C561FA000FA1BD2 /* AZDropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0B4B21C561FA000FA1BD2 /* AZDropdownMenu.swift */; };
+		53E0B4B61C5628AF00FA1BD2 /* AZDropdownMenuBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0B4B51C5628AF00FA1BD2 /* AZDropdownMenuBaseCell.swift */; };
+		53E0B4B81C5628EC00FA1BD2 /* AZDropdownMenuDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0B4B71C5628EC00FA1BD2 /* AZDropdownMenuDefaultCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		53B5E3621C4A809A007EEBA0 /* SavedCodesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedCodesViewController.swift; sourceTree = "<group>"; };
 		53B5E3641C4BB42F007EEBA0 /* TypeYourTicketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeYourTicketViewController.swift; sourceTree = "<group>"; };
 		53BC45C11C4F79700012FA02 /* FromTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FromTextViewController.swift; sourceTree = "<group>"; };
+		53E0B4B21C561FA000FA1BD2 /* AZDropdownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZDropdownMenu.swift; sourceTree = "<group>"; };
+		53E0B4B51C5628AF00FA1BD2 /* AZDropdownMenuBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZDropdownMenuBaseCell.swift; sourceTree = "<group>"; };
+		53E0B4B71C5628EC00FA1BD2 /* AZDropdownMenuDefaultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZDropdownMenuDefaultCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				532BCCC21C44588600A16B5C /* AppDelegate.swift */,
+				53BD81181C561F12001F32ED /* Classes */,
 				532BCCF11C4458A200A16B5C /* Controller */,
 				532BCCF01C44589700A16B5C /* Model */,
 				532BCCC91C44588600A16B5C /* Assets.xcassets */,
@@ -172,6 +179,24 @@
 				532BCCFC1C44675100A16B5C /* SettingsViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		53BD81181C561F12001F32ED /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				53E0B4B41C56289200FA1BD2 /* AZDropdownMenu */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		53E0B4B41C56289200FA1BD2 /* AZDropdownMenu */ = {
+			isa = PBXGroup;
+			children = (
+				53E0B4B21C561FA000FA1BD2 /* AZDropdownMenu.swift */,
+				53E0B4B51C5628AF00FA1BD2 /* AZDropdownMenuBaseCell.swift */,
+				53E0B4B71C5628EC00FA1BD2 /* AZDropdownMenuDefaultCell.swift */,
+			);
+			name = AZDropdownMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +336,7 @@
 				532BCCFD1C44675100A16B5C /* SettingsViewController.swift in Sources */,
 				53232FA01C47B91B00E12FC4 /* ScanViewController.swift in Sources */,
 				532BCCFB1C445FD600A16B5C /* CrafterViewController.swift in Sources */,
+				53E0B4B61C5628AF00FA1BD2 /* AZDropdownMenuBaseCell.swift in Sources */,
 				53232FA41C47C98000E12FC4 /* HomeViewController.swift in Sources */,
 				536F7BBB1C4E73B00097DA47 /* SQLiTableViewController.swift in Sources */,
 				532BCCF51C44596400A16B5C /* DataToCraft.swift in Sources */,
@@ -319,6 +345,8 @@
 				53B5E3651C4BB42F007EEBA0 /* TypeYourTicketViewController.swift in Sources */,
 				532BCCF31C4458DA00A16B5C /* QRCode.swift in Sources */,
 				53BC45C21C4F79700012FA02 /* FromTextViewController.swift in Sources */,
+				53E0B4B81C5628EC00FA1BD2 /* AZDropdownMenuDefaultCell.swift in Sources */,
+				53E0B4B31C561FA000FA1BD2 /* AZDropdownMenu.swift in Sources */,
 				53232FA61C47DF6900E12FC4 /* RangeViewController.swift in Sources */,
 				53B5E3631C4A809A007EEBA0 /* SavedCodesViewController.swift in Sources */,
 			);
