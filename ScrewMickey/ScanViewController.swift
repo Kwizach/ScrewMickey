@@ -35,7 +35,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     func startCapture() {
         do {
             // Camera
-            let captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+            let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
             
             let input : AVCaptureDeviceInput? = try AVCaptureDeviceInput(device: captureDevice)
             
@@ -45,7 +45,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             }
             
             let output = AVCaptureMetadataOutput()
-            output.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
+            output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
             self.session.addOutput(output)
             output.metadataObjectTypes = output.availableMetadataObjectTypes
             
@@ -63,7 +63,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     
     
     // This is called when we find a known barcode type with the camera.
-    func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
+    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
         
         let barCodeTypes = [AVMetadataObjectTypeUPCECode,
             AVMetadataObjectTypeCode39Code,
@@ -83,7 +83,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             
             for barcodeType in barCodeTypes {
                 
-                if metadata.type == barcodeType {
+                if (metadata as AnyObject).type == barcodeType {
                     self.ean = (metadata as! AVMetadataMachineReadableCodeObject).stringValue
                     if self.ean != nil {
                         break
@@ -102,7 +102,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
                 // Vibrate
                 AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
                 // Go back to the previous view
-                navigationController?.popViewControllerAnimated(true)
+                _ = navigationController?.popViewController(animated: true)
             }
             else {
                 let actionIfCancelled : (UIAlertAction)->() = {

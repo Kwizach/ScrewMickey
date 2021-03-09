@@ -28,24 +28,24 @@ class TypeYourTicketViewController: UIViewController {
     
     // Tell all controls in the view that they are not in editing mode
     // remove the keyboard
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
     // MARK: - TextField
-    @IBAction func numCahnged(sender: UITextField) {
+    @IBAction func numCahnged(_ sender: UITextField) {
         scannedTicket = DataToCraft(string: sender.text!)
         if scannedTicket.isMickeyType() {
-            sender.textColor = .greenColor()
+            sender.textColor = .green
         }
         else {
-            sender.textColor = .blackColor()
+            sender.textColor = .black
         }
     }
     
     // MARK: - Button
     
-    @IBAction func clickedOKButton(sender: UIButton) {
+    @IBAction func clickedOKButton(_ sender: UIButton) {
         if numTextField.text != nil {
             alertThatItIsNotAValidMickeyCode(self, actionCancel: nil, actionOK: nil)
         }

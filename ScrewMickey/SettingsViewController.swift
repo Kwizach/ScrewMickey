@@ -29,7 +29,7 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         */
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         // show settings as we know them
         
         // Timer
@@ -40,11 +40,11 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         stepsTextField.text = "\(configQrafter.incrementationValue)"
         
         // Picker View
-        if let row = errorCorrectionShortList.indexOf(configQrafter.errorCorrection.rawValue) {
+        if let row = errorCorrectionShortList.index(of: configQrafter.errorCorrection.rawValue) {
             errorCorrectionPicker.selectRow(row, inComponent: 0, animated: true)
         }
         // Switch
-        vibrateSwitch.on = configQrafter.withVibration
+        vibrateSwitch.isOn = configQrafter.withVibration
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,7 +56,7 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     // Tell all controls in the view that they are not in editing mode
     // remove the keyboard
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
@@ -64,7 +64,7 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     // use UITextFieldDelegate
     // No need for this keypad
     
-    @IBAction func stepsEndEditing(sender: UITextField) {
+    @IBAction func stepsEndEditing(_ sender: UITextField) {
         if sender.text != nil {
             configQrafter.incrementationValue = Int(sender.text!)!
         }
@@ -76,7 +76,7 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     // MARK: - Slider
     
-    @IBAction func timerSliderChanged(sender: UISlider) {
+    @IBAction func timerSliderChanged(_ sender: UISlider) {
         let laValeur = timerValue()
         timerLabel.text = "\(laValeur)"
         configQrafter.timeBetweenCraft = laValeur
@@ -88,25 +88,25 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     // MARK: - PickerView
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return errorCorrectionList.count
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return errorCorrectionList[row]
     }
     
     // React to selection
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         configQrafter.errorCorrection = QRCode.ErrorCorrection(rawValue: QRCode.ErrorCorrection.allValues[row])!
     }
     
-    @IBAction func withVibrationChanged(sender: UISwitch) {
-        configQrafter.withVibration = sender.on
+    @IBAction func withVibrationChanged(_ sender: UISwitch) {
+        configQrafter.withVibration = sender.isOn
     }
     
 }

@@ -16,9 +16,9 @@ public var configQrafter : ConfigCrafter = ConfigCrafter()
 public struct ConfigCrafter {
     
     public enum CraftFrom {
-        case Range
-        case RangeRandomly
-        case List
+        case range
+        case rangeRandomly
+        case list
     }
     
     public var isUpdatable : Bool
@@ -35,7 +35,7 @@ public struct ConfigCrafter {
     public let incrementationValueDefault : Int = 1
     public let itimeBetweenCraftDefault : Double = 2.0
     public let errorCorrectionDefault : QRCode.ErrorCorrection = .Low
-    public let emptyDataToCraft : DataToCraft = DataToCraft(string: "", type: .AnyText)
+    public let emptyDataToCraft : DataToCraft = DataToCraft(string: "", type: .anyText)
     
     init() {
         isUpdatable = false
@@ -44,7 +44,7 @@ public struct ConfigCrafter {
         lowerRangeValue = emptyDataToCraft
         upperRangeValue = emptyDataToCraft
         listOfValues = []
-        craftFromRangeOrList = .Range
+        craftFromRangeOrList = .range
         errorCorrection = errorCorrectionDefault
         withVibration = false
         rangeLength = 0
@@ -80,15 +80,15 @@ public struct QRCode {
     public var size = CGSize(width: 200, height: 200)
     
     /// CIQRCodeGenerator generates 27x27px images per default
-    private let DefaultQRCodeSize = CGSize(width: 27, height: 27)
+    fileprivate let DefaultQRCodeSize = CGSize(width: 27, height: 27)
     
     /// Data contained in the generated QRCode
-    private var data: NSData = NSData()
+    fileprivate var data: Data = Data()
     
     // MARK: - Change Data
     
-    public mutating func setText(string: String) {
-        if let newData = string.dataUsingEncoding(NSISOLatin1StringEncoding) {
+    public mutating func setText(_ string: String) {
+        if let newData = string.data(using: String.Encoding.isoLatin1) {
             self.data = newData
         }
     }
@@ -99,7 +99,7 @@ public struct QRCode {
     /// The QRCode's UIImage representation
     public var image: UIImage? {
         guard let ciImage = ciImage else { return nil }
-        return UIImage(CIImage: ciImage)
+        return UIImage(ciImage: ciImage)
     }
     
     /// The QRCode's CIImage representation
@@ -114,9 +114,9 @@ public struct QRCode {
         // Size
         let sizeRatioX = size.width / DefaultQRCodeSize.width
         let sizeRatioY = size.height / DefaultQRCodeSize.height
-        let transform = CGAffineTransformMakeScale(sizeRatioX, sizeRatioY)
+        let transform = CGAffineTransform(scaleX: sizeRatioX, y: sizeRatioY)
         
-        if let transformedImage = qrFilter.outputImage?.imageByApplyingTransform(transform) {
+        if let transformedImage = qrFilter.outputImage?.applying(transform) {
             return transformedImage
         }
         return nil

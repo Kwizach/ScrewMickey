@@ -19,7 +19,7 @@ class HomeViewController: UITableViewController {
         super.viewDidLoad()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         if scannedTicket.leText == "" {
@@ -49,7 +49,7 @@ class HomeViewController: UITableViewController {
     }
     
     // Tweak to hide the manuallyTypeCell if we did'nt scan it
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 2 && indexPath.row == 1 && scannedTicket.isMickeyType() {
             return 0.0
         }
@@ -57,7 +57,7 @@ class HomeViewController: UITableViewController {
         return 44.0
     }
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
     }
     
@@ -66,14 +66,14 @@ class HomeViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func statusRangeCell(status: Bool) {
-        rangeCell.userInteractionEnabled = status
-        rangeCell.textLabel?.enabled = status
+    func statusRangeCell(_ status: Bool) {
+        rangeCell.isUserInteractionEnabled = status
+        rangeCell.textLabel?.isEnabled = status
     }
     
-    func statusSavedNumbersCell(status: Bool) {
-        savedNumbersCell.userInteractionEnabled = status
-        savedNumbersCell.textLabel?.enabled = status
+    func statusSavedNumbersCell(_ status: Bool) {
+        savedNumbersCell.isUserInteractionEnabled = status
+        savedNumbersCell.textLabel?.isEnabled = status
     }
 
     /*

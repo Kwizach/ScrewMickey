@@ -39,7 +39,7 @@ class RangeViewController: UIViewController {
     
     // MARK: - Sliders
     
-    @IBAction func upperSliderChanged(sender: UISlider) {
+    @IBAction func upperSliderChanged(_ sender: UISlider) {
         upperVal = incrementOurTicket(sender.value).leText
         let nouvelleValeur = upperVal + " (+\(Int(sender.value)))"
         
@@ -48,17 +48,17 @@ class RangeViewController: UIViewController {
         configQrafter.rangeLength = Int(upperRangeSlider.value - lowerRangeSlider.value)
     }
     
-    @IBAction func lowerSliderChanged(sender: UISlider) {
+    @IBAction func lowerSliderChanged(_ sender: UISlider) {
         lowerVal = incrementOurTicket(sender.value).leText
         let nouvelleValeur = lowerVal + " (\(Int(sender.value)))"
         
         lowerRangeLabel.text = nouvelleValeur
         
         configQrafter.rangeLength = Int(upperRangeSlider.value - lowerRangeSlider.value)
-        configQrafter.lowerRangeValue = DataToCraft(string: lowerVal, type: .Entier)
+        configQrafter.lowerRangeValue = DataToCraft(string: lowerVal, type: .entier)
     }
     
-    func incrementOurTicket(valeur: Float) -> DataToCraft {
+    func incrementOurTicket(_ valeur: Float) -> DataToCraft {
         var nouvelleValeur = scannedTicket
         nouvelleValeur.incrementText(Int(valeur))
         
@@ -69,7 +69,7 @@ class RangeViewController: UIViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
 
         // On ne passe rien au controller crafterviewcontroller... on utilise les variables globales
@@ -77,13 +77,13 @@ class RangeViewController: UIViewController {
         configQrafter.isUpdatable = true
         
         if segue.identifier == "rangeToCraft" {
-            configQrafter.craftFromRangeOrList = .Range
+            configQrafter.craftFromRangeOrList = .range
         }
         else if segue.identifier == "rangeToCraftRandomly" {
-            configQrafter.craftFromRangeOrList = .RangeRandomly
+            configQrafter.craftFromRangeOrList = .rangeRandomly
         }
-        configQrafter.lowerRangeValue = DataToCraft(string: lowerVal, type: .Entier)
-        configQrafter.upperRangeValue = DataToCraft(string: upperVal, type: .Entier)
+        configQrafter.lowerRangeValue = DataToCraft(string: lowerVal, type: .entier)
+        configQrafter.upperRangeValue = DataToCraft(string: upperVal, type: .entier)
     }
 
 }

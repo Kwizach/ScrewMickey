@@ -32,18 +32,18 @@ class SQLiTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return theSQLList.listOfSQLi.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("sqliIdentifier", forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "sqliIdentifier", for: indexPath)
 
         // Configure the cell...
         /// Title
@@ -54,11 +54,11 @@ class SQLiTableViewController: UITableViewController {
         /// Subtitle
         var subTitle : String = ""
         switch theSQLList.listOfSQLi[indexPath.row].typeDB {
-        case .Any:
+        case .any:
             subTitle = "Any DB"
-        case .MySQL:
+        case .mySQL:
             subTitle = "mySQL"
-        case .Others:
+        case .others:
             subTitle = "Other DB"
         }
         cell.detailTextLabel?.text = subTitle
@@ -66,19 +66,19 @@ class SQLiTableViewController: UITableViewController {
         return cell
     }
 
-    @IBAction func showMenu(sender: UIBarButtonItem) {
+    @IBAction func showMenu(_ sender: UIBarButtonItem) {
         if menu == nil {
             let titles = ["Our Ticket #", "Random in Range", "Random in Saved"]
             menu = AZDropdownMenu(titles: titles )
-            menu!.overlayColor = UIColor.lightGrayColor()
+            menu!.overlayColor = UIColor.lightGray
             menu!.overlayAlpha = 0.5
-            menu!.itemColor = UIColor.blackColor()
-            menu!.itemFontColor = UIColor.whiteColor()
+            menu!.itemColor = UIColor.black
+            menu!.itemFontColor = UIColor.white
             menu!.itemAlpha = 0.8
             menu!.itemWidth = 150
-            menu!.itemOriginX = .Right
+            menu!.itemOriginX = .right
             
-            menu!.cellTapHandler = { [weak self] (indexPath: NSIndexPath) -> Void in
+            menu!.cellTapHandler = { [weak self] (indexPath: IndexPath) -> Void in
                 var data : DataToCraft = DataToCraft(string: "")
                 
                 switch indexPath.row {
@@ -86,7 +86,7 @@ class SQLiTableViewController: UITableViewController {
                     data = DataToCraft(string: scannedTicket.leText)
                 case 1:
                     if configQrafter.lowerRangeValue.leText != "" && configQrafter.rangeLength > 0 {
-                        data = DataToCraft(string: configQrafter.lowerRangeValue.leText, type: .Entier)
+                        data = DataToCraft(string: configQrafter.lowerRangeValue.leText, type: .entier)
                         data.getRandomlyInRange(configQrafter.lowerRangeValue.leText, range: configQrafter.rangeLength)
                     }
                 case 2:
@@ -114,13 +114,13 @@ class SQLiTableViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
         if segue.identifier == "sqliToCraft" {
             configQrafter.isUpdatable = false
-            configQrafter.craftFromRangeOrList = .Range
+            configQrafter.craftFromRangeOrList = .range
             let row = self.tableView.indexPathForSelectedRow?.row
             let stringToCraft = codeToAdd + theSQLList.listOfSQLi[row!].value
             let data = DataToCraft(string: stringToCraft)

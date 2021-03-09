@@ -8,6 +8,19 @@
 
 import UIKit
 import MediaPlayer
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
 
 
 class CrafterViewController: UIViewController {
@@ -20,19 +33,19 @@ class CrafterViewController: UIViewController {
     
     
     var qrCode = QRCode()
-    var data : DataToCraft = DataToCraft(string: "", type: .AnyText)
+    var data : DataToCraft = DataToCraft(string: "", type: .anyText)
     var indexInListToCraft = 0
     
     var odioSession : AVAudioSession = AVAudioSession.sharedInstance()
     var previousVolume : Float?
     
-    var timer: NSTimer!
+    var timer: Timer!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if configQrafter.craftFromRangeOrList == .Range || configQrafter.craftFromRangeOrList == .RangeRandomly {
+        if configQrafter.craftFromRangeOrList == .range || configQrafter.craftFromRangeOrList == .rangeRandomly {
             data = configQrafter.lowerRangeValue
         }
         else {
@@ -40,14 +53,14 @@ class CrafterViewController: UIViewController {
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         // show the QRCode
         showImage(false)
         
         // Gray buttons if not in 
         if !configQrafter.isUpdatable {
-            playButton.enabled = false
-            pauseButton.enabled = false
+            playButton.isEnabled = false
+            pauseButton.isEnabled = false
         }
         
         // Create active AudioSession and Observe Volume Changes
@@ -60,7 +73,7 @@ class CrafterViewController: UIViewController {
             startObservingVolumeChanges()
             
             // Hide the volume subview
-            let volumeView: MPVolumeView = MPVolumeView(frame: CGRectZero)
+            let volumeView: MPVolumeView = MPVolumeView(frame: CGRect.zero)
             view.addSubview(volumeView)
         }
         catch {}
@@ -71,7 +84,7 @@ class CrafterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         stopTimer()
@@ -91,7 +104,7 @@ class CrafterViewController: UIViewController {
     
     /////////////////////////////////////////////////////////////////////////////
     
-    func showImage(withVibration: Bool) {
+    func showImage(_ withVibration: Bool) {
         qrCode.errorCorrection = configQrafter.errorCorrection
         qrCode.setText(data.leText)
         leQRCode.image = qrCode.image
@@ -104,7 +117,7 @@ class CrafterViewController: UIViewController {
     }
     
     func updateCode() {
-        if configQrafter.craftFromRangeOrList == .Range {
+        if configQrafter.craftFromRangeOrList == .range {
             data.incrementText( configQrafter.incrementationValue )
             
             if(data.isGreaterThan(configQrafter.upperRangeValue.leText)) {
@@ -114,12 +127,12 @@ class CrafterViewController: UIViewController {
                 showImage(configQrafter.withVibration)
             }
         }
-        else if configQrafter.craftFromRangeOrList == .RangeRandomly {
+        else if configQrafter.craftFromRangeOrList == .rangeRandomly {
             data.getRandomlyInRange(configQrafter.lowerRangeValue.leText, range: configQrafter.rangeLength)
             showImage(configQrafter.withVibration)
         }
-        else if configQrafter.craftFromRangeOrList == .List {
-            indexInListToCraft++
+        else if configQrafter.craftFromRangeOrList == .list {
+            indexInListToCraft += 1
             if(indexInListToCraft < configQrafter.listOfValues.count) {
                 data = configQrafter.listOfValues[indexInListToCraft]
                 showImage(configQrafter.withVibration)
@@ -142,7 +155,7 @@ class CrafterViewController: UIViewController {
         
         if configQrafter.isUpdatable {
             if timer == nil && every != 0.0 && steps != 0 {
-                timer = NSTimer.scheduledTimerWithTimeInterval(every, target: self, selector: Selector("updateCode"), userInfo: nil, repeats: true)
+                timer = Timer.scheduledTimer(timeInterval: every, target: self, selector: #selector(CrafterViewController.updateCode), userInfo: nil, repeats: true)
             }
         }
     }
@@ -153,17 +166,17 @@ class CrafterViewController: UIViewController {
                 timer.invalidate()
                 timer = nil
                 
-                playButton.enabled = false
-                pauseButton.enabled = false
+                playButton.isEnabled = false
+                pauseButton.isEnabled = false
             }
         }
     }
     
-    @IBAction func playIncrementation(sender: UIBarButtonItem) {
+    @IBAction func playIncrementation(_ sender: UIBarButtonItem) {
         startTimer()
     }
     
-    @IBAction func pauseIncrementation(sender: UIBarButtonItem) {
+    @IBAction func pauseIncrementation(_ sender: UIBarButtonItem) {
         stopTimer()
     }
     
@@ -174,10 +187,10 @@ class CrafterViewController: UIViewController {
     /////////////////////////////////////////////////////////////////////////////
     
     func startObservingVolumeChanges() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "volumeChangement:", name: "AVSystemController_SystemVolumeDidChangeNotification", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(CrafterViewController.volumeChangement(_:)), name: NSNotification.Name(rawValue: "AVSystemController_SystemVolumeDidChangeNotification"), object: nil)
     }
     
-    func volumeChangement(notification: NSNotification) {
+    func volumeChangement(_ notification: Notification) {
         let volume = notification.userInfo!["AVSystemController_AudioVolumeNotificationParameter"] as! Float
         let changeReason = notification.userInfo!["AVSystemController_AudioVolumeChangeReasonNotificationParameter"] as! String
         
@@ -213,7 +226,7 @@ class CrafterViewController: UIViewController {
     }
     
     func stopObservingVolumeChanges() {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: "AVSystemController_SystemVolumeDidChangeNotification", object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "AVSystemController_SystemVolumeDidChangeNotification"), object: nil)
     }
     
     /*

@@ -16,7 +16,7 @@ class FromTextViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        textToCraft.layer.borderColor = UIColor.lightGrayColor().CGColor
+        textToCraft.layer.borderColor = UIColor.lightGray.cgColor
         textToCraft.layer.borderWidth = 1.0
         textToCraft.layer.cornerRadius = 5.0
     }
@@ -30,19 +30,19 @@ class FromTextViewController: UIViewController {
     
     // Tell all controls in the view that they are not in editing mode
     // remove the keyboard
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "fromTextToCraft" {
             configQrafter.isUpdatable = false
-            configQrafter.craftFromRangeOrList = .Range
+            configQrafter.craftFromRangeOrList = .range
             configQrafter.lowerRangeValue = DataToCraft(string: textToCraft.text)
             configQrafter.upperRangeValue = DataToCraft(string: "")
         }

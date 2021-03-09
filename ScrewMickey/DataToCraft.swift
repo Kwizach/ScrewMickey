@@ -7,12 +7,36 @@
 //
 import UIKit
 import Foundation
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 public var scannedTicket : DataToCraft = DataToCraft(string: "")
 
 public var savedNumbers : [DataToCraft] = []
 
-func checkIfDataAlreadyInSavedNumbers(data: DataToCraft) -> Bool {
+func checkIfDataAlreadyInSavedNumbers(_ data: DataToCraft) -> Bool {
     for aData in savedNumbers {
         if aData.leText == data.leText {
             return true
@@ -24,14 +48,14 @@ func checkIfDataAlreadyInSavedNumbers(data: DataToCraft) -> Bool {
 
 public struct DataToCraft {
     
-    public enum Type {
-        case AnyText
-        case Entier
-        case UserAccepted
-        case SQL
+    public enum Typage {
+        case anyText
+        case entier
+        case userAccepted
+        case sql
     }
     
-    public var leType : Type = .AnyText
+    public var leType : Typage = .anyText
     public var leText : String = ""
     
     // MARK: - Inits
@@ -40,31 +64,31 @@ public struct DataToCraft {
         setText(string)
     }
     
-    public init(string: String, type: Type) {
+    public init(string: String, type: Typage) {
         leText = string
         leType = type
     }
     
     // MARK: - Operations
     
-    public mutating func setText(str : String) {
+    public mutating func setText(_ str : String) {
         leText = str
         if isEntier() {
-            leType = .Entier
+            leType = .entier
         }
         else {
-            leType = .AnyText
+            leType = .anyText
         }
     }
     
-    public mutating func getRandomlyInRange(lowerValue: String, range : Int) {
+    public mutating func getRandomlyInRange(_ lowerValue: String, range : Int) {
         let randomNum = Int(arc4random_uniform(UInt32(range)) + 1)
         self.leText = lowerValue
         self.incrementText(randomNum)
     }
     
-    public mutating func incrementText(step : Int) {
-        if leType == .Entier || leType == .UserAccepted {
+    public mutating func incrementText(_ step : Int) {
+        if leType == .entier || leType == .userAccepted {
             var laValeur : Int
             
             if leText.characters.count > 15 {
@@ -87,19 +111,19 @@ public struct DataToCraft {
         }
     }
     
-    private func splitEntier(lEntier : String) -> (String, String) {
-        let leDebut = lEntier.substringToIndex(lEntier.endIndex.advancedBy(-15))
-        let laFin = lEntier.substringFromIndex(lEntier.endIndex.advancedBy(-15))
+    fileprivate func splitEntier(_ lEntier : String) -> (String, String) {
+        let leDebut = lEntier.substring(to: lEntier.characters.index(lEntier.endIndex, offsetBy: -15))
+        let laFin = lEntier.substring(from: lEntier.characters.index(lEntier.endIndex, offsetBy: -15))
         
         return (leDebut, laFin)
     }
     
-    private func numberOfLeadingZeros(str: String) -> Int {
+    fileprivate func numberOfLeadingZeros(_ str: String) -> Int {
         var num : Int = 0
         var laStr = str
         
-        if  laStr.removeAtIndex(laStr.startIndex) == "0" {
-            num++
+        if  laStr.remove(at: laStr.startIndex) == "0" {
+            num += 1
             num += numberOfLeadingZeros(laStr)
         }
         else {
@@ -108,7 +132,7 @@ public struct DataToCraft {
         return num
     }
     
-    public func isGreaterThan(second: String) -> Bool {
+    public func isGreaterThan(_ second: String) -> Bool {
         let premier = self.leText
         
         if premier.characters.count > second.characters.count {
@@ -143,11 +167,11 @@ public struct DataToCraft {
             return false
         }
         let regexNumbersOnly = try! NSRegularExpression(pattern: ".*[^0-9].*", options: [])
-        return regexNumbersOnly.firstMatchInString(self.leText, options: [], range: NSMakeRange(0, self.leText.characters.count)) == nil
+        return regexNumbersOnly.firstMatch(in: self.leText, options: [], range: NSMakeRange(0, self.leText.characters.count)) == nil
     }
     
     public func isMickeyType() -> Bool {
-        if self.leType == .UserAccepted || (isEntier() && self.leText.characters.count == 21) {
+        if self.leType == .userAccepted || (isEntier() && self.leText.characters.count == 21) {
             return true
         }
         return false
@@ -155,7 +179,7 @@ public struct DataToCraft {
 }
 
 // Helper for alert when the ticket is not in the expected format
-public func alertThatItIsNotAValidMickeyCode(me: UIViewController, actionCancel: ((UIAlertAction)->())?, actionOK: ((UIAlertAction)->())?) {
+public func alertThatItIsNotAValidMickeyCode(_ me: UIViewController, actionCancel: ((UIAlertAction)->())?, actionOK: ((UIAlertAction)->())?) {
     
     var actionForCancel : (UIAlertAction) -> ()
     var actionForOK     : (UIAlertAction) -> ()
@@ -173,9 +197,9 @@ public func alertThatItIsNotAValidMickeyCode(me: UIViewController, actionCancel:
     if actionOK == nil {
         actionForOK = {
             action in
-            scannedTicket.leType = .UserAccepted
-            dispatch_async(dispatch_get_main_queue(), {
-                me.navigationController?.popViewControllerAnimated(true)
+            scannedTicket.leType = .userAccepted
+            DispatchQueue.main.async(execute: {
+                _ = me.navigationController?.popViewController(animated: true)
             })
             return
         }
@@ -187,19 +211,19 @@ public func alertThatItIsNotAValidMickeyCode(me: UIViewController, actionCancel:
     
     if !scannedTicket.isMickeyType() {
         // Show an Alert
-        let alert = UIAlertController(title: "Not a Disney's ticket format", message: "Use it anyway ?", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "Not a Disney's ticket format", message: "Use it anyway ?", preferredStyle: UIAlertControllerStyle.alert)
         
         // Add actions
         // Cancel we just stay here and remove scannedTicket value
-        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: actionForCancel))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: actionForCancel))
         // OK
         // We keep the saved value in scannedTicket and move back to previous view
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: actionForOK))
-        me.presentViewController(alert, animated: true, completion: nil)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: actionForOK))
+        me.present(alert, animated: true, completion: nil)
     }
     else {
         // Format looks good move back to previous view
-        me.navigationController?.popViewControllerAnimated(true)
+        _ = me.navigationController?.popViewController(animated: true)
     }
 }
 

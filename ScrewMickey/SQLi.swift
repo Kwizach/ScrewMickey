@@ -12,9 +12,9 @@ public var theSQLList = SQLi()
 
 public struct SQLi {
     public enum DBType {
-        case Any
-        case MySQL
-        case Others
+        case any
+        case mySQL
+        case others
     }
     
     public struct SingleSQLi {
@@ -28,19 +28,19 @@ public struct SQLi {
     }
     
     public let listOfSQLi : [SingleSQLi] = [
-        SingleSQLi(type: .Any, val: "'"),
-        SingleSQLi(type: .Any, val: " or 1=1 "),
-        SingleSQLi(type: .Others, val: " or 1=1 --"),
-        SingleSQLi(type: .MySQL, val: " or 1=1 #"),
-        SingleSQLi(type: .Any, val: "' or 1=1 "),
-        SingleSQLi(type: .Others, val: "' or 1=1 --"),
-        SingleSQLi(type: .MySQL, val: "' or 1=1 #"),
-        SingleSQLi(type: .Any, val: " or 2=2 "),
-        SingleSQLi(type: .Others, val: " or 2=2 --"),
-        SingleSQLi(type: .MySQL, val: " or 2=2 #"),
-        SingleSQLi(type: .Any, val: "' or 2=2 "),
-        SingleSQLi(type: .Others, val: "' or 2=2 --"),
-        SingleSQLi(type: .MySQL, val: "' or 2=2 #")
+        SingleSQLi(type: .any, val: "'"),
+        SingleSQLi(type: .any, val: " or 1=1 "),
+        SingleSQLi(type: .others, val: " or 1=1 --"),
+        SingleSQLi(type: .mySQL, val: " or 1=1 #"),
+        SingleSQLi(type: .any, val: "' or 1=1 "),
+        SingleSQLi(type: .others, val: "' or 1=1 --"),
+        SingleSQLi(type: .mySQL, val: "' or 1=1 #"),
+        SingleSQLi(type: .any, val: " or 2=2 "),
+        SingleSQLi(type: .others, val: " or 2=2 --"),
+        SingleSQLi(type: .mySQL, val: " or 2=2 #"),
+        SingleSQLi(type: .any, val: "' or 2=2 "),
+        SingleSQLi(type: .others, val: "' or 2=2 --"),
+        SingleSQLi(type: .mySQL, val: "' or 2=2 #")
     ]
     
 }
